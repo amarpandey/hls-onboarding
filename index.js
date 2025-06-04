@@ -1,14 +1,25 @@
 const express = require('express');
 const app = express();
 
+app.set("view engine", "ejs");
+
 const port = process.env.PORT || 3000;
 
 app.get('/', (req, res)=>{
-    res.send('Welcome to HLS onboarding module');
+    res.render('index', {agency : 'HLS'});
 });
 
-app.post('/hls/saveclient', (req, res)=>{
-    res.send('Client onboarding request received');
+app.get('/hls/client/:id', (req, res)=>{
+    res.send('Invalid request. Token not found.');
+})
+app.post('/hls/client', (req, res)=>{
+    res.send('Invalid request. Token not found.');
+})
+app.put('/hls/client', (req, res)=>{
+    res.send('Invalid request. Token not found.');
+})
+app.delete('/hls/client', (req, res)=>{
+    res.send('Invalid request. Token not found.');
 })
 
 moduleHomeCallback = ()=>{
